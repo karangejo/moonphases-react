@@ -15,12 +15,12 @@ npm install --save moonphases-react
 ```jsx
 import React, { Component } from 'react'
 
-import MyComponent from 'moonphases-react'
+import MoonPhase from 'moonphases-react'
 
 class Example extends Component {
   render () {
     return (
-      <MyComponent />
+      <MoonPhase />
     )
   }
 }

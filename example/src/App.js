@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 
-import ExampleComponent from 'moonphases-react'
+import MoonPhase from 'moonphases-react'
 
 export default class App extends Component {
   render () {
     return (
       <div>
-        <ExampleComponent text='Modern React component module' />
+        <MoonPhase />
       </div>
     )
   }
