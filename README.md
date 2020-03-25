@@ -26,6 +26,10 @@ class Example extends Component {
 }
 ```
 
+## Demo
+
+[demo](https://karangejo.github.io/moonphases-react/)
+
 ## License
 
 MIT © [karangejo](https://github.com/karangejo)
