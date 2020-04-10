@@ -29,9 +29,15 @@ function MoonPhase(props) {
     return(phase.name);
   };
 
+    const phaseName = getMoonPhase();
+
 
     return (
-      <img alt="current moon phase" src={phasesObj[getMoonPhase()]}/>
+      <div>
+        <img alt="current moon phase" src={phasesObj[phaseName]}/>
+        <p style={{fontFamily: props.fontFamily, fontSize: props.fontSize, color: props.fontColor, hidden:(props.showFont || "true")}}>{phaseName}</p>
+      </div>
+      
     )
 }
 
