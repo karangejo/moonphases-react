@@ -23,6 +23,7 @@ const phasesObj = {
 
 
 function MoonPhase(props) {
+  
   const getMoonPhase = () => {
     const today = new Date();
     const phase = moon.phase(today.getFullYear(), today.getMonth()+1, today.getDate());
@@ -31,11 +32,32 @@ function MoonPhase(props) {
 
     const phaseName = getMoonPhase();
 
+    const camelToNormal = (camelString) => {
+      return(
+        camelString
+          .replace( /([A-Z])/g, " $1" )
+          .replace(/^\w/, c => c.toUpperCase())
+      );
+    }
+
+    const phaseText = () => {
+      return(
+        <p style={{
+            fontFamily: props.fontFamily, 
+            fontSize: props.fontSize, 
+            color: props.fontColor, 
+            hidden:(props.showFont || "true"), 
+            background: (props.backgroundColor || null)
+          }}>
+          {camelToNormal(phaseName)}
+        </p>
+      )
+    }
 
     return (
-      <div>
+      <div align="center">
         <img alt="current moon phase" src={phasesObj[phaseName]}/>
-        <p style={{fontFamily: props.fontFamily, fontSize: props.fontSize, color: props.fontColor, hidden:(props.showFont || "true")}}>{phaseName}</p>
+        {props.showText ? phaseText() : null}
       </div>
       
     )
