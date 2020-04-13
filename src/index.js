@@ -21,46 +21,46 @@ const phasesObj = {
                     waxingGibbousMoon: wxgm
                   }
 
-
-function MoonPhase(props) {
-  
-  const getMoonPhase = () => {
+const getMoonPhase = () => {
     const today = new Date();
     const phase = moon.phase(today.getFullYear(), today.getMonth()+1, today.getDate());
     return(phase.name);
-  };
+}
 
-    const phaseName = getMoonPhase();
-
-    const camelToNormal = (camelString) => {
+const camelToNormal = (camelString) => {
       return(
         camelString
           .replace( /([A-Z])/g, " $1" )
           .replace(/^\w/, c => c.toUpperCase())
       );
-    }
+}
 
-    const phaseText = () => {
-      return(
-        <p style={{
-            fontFamily: props.fontFamily, 
-            fontSize: props.fontSize, 
-            color: props.fontColor, 
-            hidden:(props.showFont || "true"), 
-            background: (props.backgroundColor || null)
-          }}>
-          {camelToNormal(phaseName)}
-        </p>
-      )
-    }
+const phaseName = getMoonPhase();
 
+export function PhaseText(props) {
+  
+  return(
+    <p style={{
+        fontFamily: props.fontFamily, 
+        fontSize: props.fontSize, 
+        color: props.fontColor, 
+        hidden:(props.showFont || "true"), 
+        background: (props.backgroundColor || null)
+      }}>
+      {camelToNormal(phaseName)}
+    </p>
+  )
+}
+
+
+export function MoonPhase() {
+  
     return (
-      <div align="center">
         <img alt="current moon phase" src={phasesObj[phaseName]}/>
-        {props.showText ? phaseText() : null}
-      </div>
-      
     )
 }
 
-export default MoonPhase;
+
+
+
+
