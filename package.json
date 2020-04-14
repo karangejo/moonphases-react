@@ -1,6 +1,6 @@
 {
   "name": "moonphases-react",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "react component that displays the current moon phase",
   "author": "karangejo",
   "license": "MIT",

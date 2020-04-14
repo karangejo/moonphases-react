@@ -14,7 +14,7 @@ const phasesObj = {
                     newMoon: nm,
                     fullMoon: fm,
                     firstQuarterMoon: fqm,
-                    lastQuarterMoon: lqm,
+                    thirdQuarterMoon: lqm,
                     waningCrescentMoon: wncm,
                     waxingCrescentMoon: wxcm,
                     waningGibbousMoon: wngm,
